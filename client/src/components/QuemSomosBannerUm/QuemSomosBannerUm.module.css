@@ -1,0 +1,18 @@
+.container {
+    display: absolute;
+    background: url('./background1.png');
+    block-size: fit-content;
+    height: 400px;
+    text-align: center;
+    padding-top: 14em;
+}
+
+.oQueEhGM {
+    background-color: #7C0B0B;
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+    margin-left: 15em;
+    color: #FFF;
+    opacity: 85%;
+}

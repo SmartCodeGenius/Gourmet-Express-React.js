@@ -1,0 +1,33 @@
+.bannerContainer {
+    background: url('./Banner.png') no-repeat;
+    block-size: fit-content;
+    height: 400px;
+}
+
+.gmContainer {
+   display: flex;
+   flex-direction: column;
+   width: 400px;
+   text-align: center;
+   margin-left: 55em;
+   padding-top: 50px;
+}
+
+.gmContainer p {
+    font-size: 30px;
+}
+
+.botao {
+    font-family: 'Poppins', sans-serif;
+    background-color: #7E1701;
+    color: #FFF;
+    font-size: 25px;
+    padding: 10px;
+    margin: 0 100px;
+    border: 0;
+    border-radius: 20px;
+}
+
+.botao:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,47 @@
+.navbar{
+    display: flex;
+    background-color: #7E1701;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    border-radius: 90px;
+    margin: 0 3em;
+}
+
+.containerNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0px;
+}
+
+.link {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 55px;
+    margin-right: 40px;
+    border-radius: 5px;
+}
+
+.link:hover {
+    background-color: #BB1111;
+}
+
+.barraNavbar {
+    padding: 17px .5px;
+    background-color: #FFF;
+    margin-right: 40px;
+}
+
+.entrar {
+    background-color: #FFF;
+    padding: 5px 50px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none
+}

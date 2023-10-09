@@ -1,0 +1,40 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.titulo {
+    font-size: 3em;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    margin: .75em 10em;
+    border-radius: 10px;
+}
+
+.botao {
+    padding: 10px;
+    font-size: 2em;
+    margin: .96em 15em;
+    border: 0;
+    border-radius: .25em;
+    color: #FFF;
+    background-color: #7E1701;
+    font-weight: 500;
+}
+
+.login {
+    color: #777777;
+    font-size: 1.25em;
+}

@@ -1,0 +1,16 @@
+.containerEquipe {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 1.75em;
+}
+
+.integrante {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagem_integrante {
+    width: 180px;
+    border-radius: 6em;
+}

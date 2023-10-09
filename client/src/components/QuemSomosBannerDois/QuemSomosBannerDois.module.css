@@ -1,0 +1,22 @@
+.container {
+    background: url('./background_1.png');
+    margin-top: -20px;
+    height: 350px;
+    padding-top: 9.5em;
+}
+
+.containerInformacoes {
+    display: flex;
+    text-align: center;
+    color: #FFF;
+    background-color: #7C0B0B;
+    opacity: 85%;
+}
+
+.titulo {
+    font-size: 30px;
+}
+
+.texto {
+    padding: 0 3.5em;
+}

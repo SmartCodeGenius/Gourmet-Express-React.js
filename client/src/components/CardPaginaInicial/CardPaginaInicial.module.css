@@ -1,0 +1,40 @@
+.cardContainer {
+    width: 275px;
+    height: 325px;
+    flex-shrink: 0;
+    background-color: #7C0B0B;
+    border-radius: 20px;
+    box-shadow: 18px 12px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 60px 30px;
+    text-align: center;
+}
+
+.imagem {
+    width: 225px;
+    margin-top: 20px;
+}
+
+.texto {
+    font-size: 22px;
+}
+
+.textoBackground {
+    background-color: #FFF;
+    padding: 0.1px;
+}
+
+.botao {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: #FFF;
+    border: 0;
+    background-color: #BB1111;
+    padding: 2px 30px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.botao:hover {
+    cursor: pointer;
+}
