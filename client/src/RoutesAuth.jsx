@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import SideBar from "./components/SideBar";
 import Estabelecimentos from "./AuthPages/Estabelecimentos";
 import Desempenho from "./AuthPages/Desempenho";
@@ -7,10 +7,14 @@ import { useContext } from "react";
 import { AuthContext } from "./Context/Auth";
 
 export default function RoutesAuth() {
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth, EhAuth } = useContext(AuthContext);
+
+  if(!EhAuth) {
+    return <Navigate to='/'/>
+  }
 
   return (
-    <SideBar>
+    <SideBar setAuth={setAuth}>
         <Routes>
             <Route path='/estabelecimentos' element={<Estabelecimentos/>}/>
             <Route path='/desempenho' element={<Desempenho/>}/>
