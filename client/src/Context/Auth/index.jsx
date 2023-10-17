@@ -7,28 +7,25 @@ export const AuthProvider = ({ children }) => {
     console.log('Usuario autenticado: ', ehAutenticado);
 
     const setAuth = (boolean) => {
-        setEhAutenticado(boolean);
-      }
+      setEhAutenticado(boolean);
+    }
 
-      async function EhAuth() {
-        try {
-         
-         const response = await fetch('http://localhost:5000/auth/eh-verificado', {
-           method: 'GET',
-           headers: {token: localStorage.token}
-         });
-   
-         const parseRes = await response.json();
-         
-         parseRes === true ? setEhAutenticado(true) : setEhAutenticado(false);         
-        } catch (err) {
-          console.error(err.message);
-        }
-     }
+    async function EhAuth() {
+    try {
+      const response = await fetch('http://localhost:5000/auth/eh-verificado', {
+        method: 'GET',
+        headers: {token: localStorage.token}
+      });
+        const parseRes = await response.json();
+        parseRes === true ? setEhAutenticado(true) : setEhAutenticado(false);         
+      } catch (err) {
+        console.error(err.message);
+      }
+    }
 
     return (
-        <AuthContext.Provider value={{ ehAutenticado, EhAuth, setAuth }}>
-            {children}
-        </AuthContext.Provider>
+      <AuthContext.Provider value={{ ehAutenticado, EhAuth, setAuth }}>
+        {children}
+      </AuthContext.Provider>
     );
 }

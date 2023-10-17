@@ -24,7 +24,7 @@ export default function SideBar({ children, nome, setAuth }) {
       icon: <BsGraphUp/>
     },
     {
-      path: '/configurações',
+      path: '/configuracoes',
       name: 'Configurações',
       icon: <CiSettings/>
     },

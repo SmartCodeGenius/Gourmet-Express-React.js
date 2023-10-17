@@ -1,7 +1,5 @@
-import React from 'react'
-
 export default function Desempenho() {
   return (
-    <div>Desempenho</div>
+    <h1>Desempenho</h1>
   )
 }
