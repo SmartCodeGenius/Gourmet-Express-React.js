@@ -41,6 +41,10 @@ main {
     cursor: pointer;
 }
 
+.link_container {
+    margin-top: 300px;
+}
+
 .link {
     display: flex;
     color: #FFF;
