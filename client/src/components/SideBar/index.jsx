@@ -2,10 +2,9 @@ import { BiRestaurant } from 'react-icons/bi';
 import { BsGraphUp } from 'react-icons/bs';
 import { CiSettings } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa';
-import { SlLogout } from 'react-icons/sl';
 
 import styles from './SideBar.module.css'
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function SideBar({ children, nome, setAuth }) {
@@ -31,11 +30,6 @@ export default function SideBar({ children, nome, setAuth }) {
     },
   ]
 
-  const logout = () => {
-    localStorage.removeItem('token');
-    setAuth(false);
-  }
-
   return (
     <div className={styles.container}>
       <div style={{ width: selecionado ? '300px' : '50px' }} className={styles.sidebar}>
@@ -52,10 +46,6 @@ export default function SideBar({ children, nome, setAuth }) {
               <div style={{ display: selecionado ? 'block' : 'none' }} className={styles.link_texto}>{item.name}</div>
             </NavLink>
           ))}
-          <Link onClick={() => logout()} key={menuItem.length+1} className={styles.link} activeclassName='active'>
-            <div className={styles.icone}><SlLogout/></div>
-            <div style={{ display: selecionado ? 'block' : 'none' }} className={styles.link_texto}>Logout</div>
-          </Link>
         </div>
       </div>
       <main>{children}</main>

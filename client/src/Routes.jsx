@@ -40,7 +40,7 @@ export default function AppRoutes() {
         <Route path="/planos" element={!ehAutenticado ? <Planos /> : <Navigate to='/estabelecimentos' />} />
         <Route path="/quemsomos" element={!ehAutenticado ? <QuemSomos /> : <Navigate to='/estabelecimentos' />} />
         <Route path="/suporte" element={!ehAutenticado ? <Suporte /> : <Navigate to='/estabelecimentos' />} />
-        <Route path="/*" element={<PaginaNEncontrada/>} />
+        <Route path="/*" element={!ehAutenticado ? <PaginaNEncontrada/> : ''} />
 
 
         {/* Erro 404 - Página não encontrada*/}

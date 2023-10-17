@@ -33,6 +33,7 @@ export default function Cadastro({ setAuth }) {
 
       localStorage.setItem('token', parseRes.token);
       setAuth(true);
+      window.location.href = '/estabelecimentos';
 
     } catch (err) {
       console.error(err.message);

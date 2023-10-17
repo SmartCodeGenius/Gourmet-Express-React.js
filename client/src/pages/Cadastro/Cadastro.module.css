@@ -8,6 +8,7 @@
 
 .titulo {
     font-size: 3em;
+    margin: .34em 0;
 }
 
 .form {
@@ -37,4 +38,5 @@
 .login {
     color: #777777;
     font-size: 1.25em;
+    margin-bottom: 1.5em;
 }
