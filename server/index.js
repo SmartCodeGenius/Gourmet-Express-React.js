@@ -12,6 +12,9 @@ app.use('/auth', require('./routes/jwtAuth'));
 //Rota -> dashboard
 app.use('/dashboard', require('./routes/dashboard'));
 
+//Rota -> estabelecimento
+app.use('/estabelecimento', require('./routes/estabelecimento.js'));
+
 app.listen(5000, () => {
     console.log('Escutando porta 5000');
 });

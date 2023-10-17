@@ -10,10 +10,12 @@ export default function Login() {
     <div className={styles.container}>
       <h1 className={styles.titulo}>Login</h1>
       <form className={styles.form} onSubmit={e => onSubmitForm(e)}>
-        <input type='email' name='email' placeholder='Coloque seu email...' className={styles.input} value={email} onChange={e => onChange(e)}/>
-        <input type='password' name='senha' placeholder='Coloque sua senha...' className={styles.input} value={senha} onChange={e => onChange(e)}/>
-        <button className={styles.botao}>Entrar</button>
-        <Link to='/cadastro' className={styles.login}>Não possui cadastro?</Link>
+        <div className={styles.inputs}>
+          <input type='email' name='email' placeholder='Coloque seu email...' className={styles.input} value={email} onChange={e => onChange(e)}/>
+          <input type='password' name='senha' placeholder='Coloque sua senha...' className={styles.input} value={senha} onChange={e => onChange(e)}/>
+          <button className={styles.botao}>Entrar</button>
+          <Link to='/cadastro' className={styles.login}>Não possui cadastro?</Link>
+        </div>
       </form>
     </div>
 );

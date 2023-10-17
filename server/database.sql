@@ -1,6 +1,6 @@
 CREATE DATABASE gourmetexpress;
 
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- CREATE TABLE clientes(
 --     id INTEGER PRIMARY KEY
@@ -16,7 +16,8 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- );
 
 CREATE TABLE usuarios(
-    id_usuario uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    -- id_usuario uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id_usuario SERIAL PRIMARY KEY,
     nome_usuario VARCHAR(100) NOT NULL,
     email_usuario VARCHAR(150) NOT NULL,
     senha_usuario VARCHAR(100) NOT NULL
@@ -31,8 +32,10 @@ CREATE TABLE usuarios(
 CREATE TABLE estabelecimentos(
     id_estabelecimento SERIAL PRIMARY KEY,
     nome_estabelecimento VARCHAR(100) NOT NULL,
+    endereco_estabelecimento VARCHAR(255) NOT NULL,
     descricao_estabelecimento VARCHAR(255),
-    endereco_estabelecimento VARCHAR(255) NOT NULL
+    id_usuario INTEGER NOT NULL,
+    FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario)
 );
 
 CREATE TABLE produtos(
