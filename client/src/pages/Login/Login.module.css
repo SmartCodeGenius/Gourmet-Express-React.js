@@ -13,19 +13,19 @@
 
 .form {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
 .input {
     font-size: 1.5em;
     text-align: center;
-    padding: 10px;
-    margin: 1em 10em;
+    padding: 10px 200px;
+    margin: 1em 8em;
     border-radius: 10px;
 }
 
 .botao {
-    padding: 10px;
+    padding: 10px 80px;
     font-size: 2em;
     margin: 1em 15em;
     border: 0;
@@ -42,5 +42,4 @@
 .login {
     color: #777777;
     font-size: 1.25em;
-    margin: 1.52em 0;
 }
