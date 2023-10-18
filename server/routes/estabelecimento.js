@@ -16,7 +16,7 @@ router.get('/', authorization, async(req, res) => {
     }
 });
 
-router.post('/registro', authorization, async (req, res) => {
+router.post('/registro', authorization, async(req, res) => {
     try {
 
         const { nome, endereco, descricao } = req.body;

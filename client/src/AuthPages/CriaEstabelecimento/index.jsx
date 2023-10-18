@@ -12,9 +12,9 @@ export default function CriaEstabelecimento() {
             <input type='text' className={styles.input}/>
             <label>Descrição<strong style={{ color: 'red' }}>*</strong></label>
             <input type='text' className={styles.input} style={{ padding: '50px 10px', fontSize: 15 }} placeholder='Descreva seu restaurante de forma breve...'/>
-            <div>
-                <Link to='/estabelecimentos' className={styles.opcao} style={{ backgroundColor: '#7C0B0B' }}>Cancelar</Link>
-                <button className={styles.opcao} style={{ backgroundColor: '#FFF', color: '#000' }}>Confirmar</button>
+            <div className={styles.opcoes}>
+                <Link to='/estabelecimentos' className={styles.opcao} style={{ backgroundColor: '#FFF', color: '#000' }}>Cancelar</Link>
+                <button className={styles.opcao} style={{ backgroundColor: '#7C0B0B' }}>Confirmar</button>
             </div>
         </form>
     </section>

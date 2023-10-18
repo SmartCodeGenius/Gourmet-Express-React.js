@@ -24,6 +24,10 @@ export const JWTProvider = ({ children }) => {
         try {
     
           const body = { email, senha };
+
+          if (email.trim() === "" || senha.trim() === ""){
+            return alert('As credenciais não podem estar vazias');
+          }
           
           const response = await fetch('http://localhost:5000/auth/login', {
             method: 'POST',

@@ -5,7 +5,7 @@ import Desempenho from "./AuthPages/Desempenho";
 import Configuracoes from "./AuthPages/Configuracoes";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "./Context/Auth";
-import { GetNomeContext } from "./Context/getNome";
+import { GetNomeContext } from "./Context/Nome";
 import CriaEstabelecimento from "./AuthPages/CriaEstabelecimento";
 
 export default function RoutesAuth() {

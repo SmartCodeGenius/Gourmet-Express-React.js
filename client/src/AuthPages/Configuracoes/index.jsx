@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { GetNomeContext } from "../../Context/getNome";
+import { GetNomeContext } from "../../Context/Nome";
 
 export default function Configuracoes({ setAuth }) {
   const { nome, getNome } = useContext(GetNomeContext);
