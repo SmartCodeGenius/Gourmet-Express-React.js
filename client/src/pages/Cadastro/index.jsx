@@ -44,11 +44,11 @@ export default function Cadastro({ setAuth }) {
     <div className={styles.container}>
       <h1 className={styles.titulo}>Cadastro</h1>
       <form className={styles.form} onSubmit={e => onSubmitForm(e)}>
-      <input type='text' name='nome' placeholder='Coloque seu nome...' className={styles.input} value={nome} onChange={e => onChange(e)}/>
-      <input type='email' name='email' placeholder='Coloque seu email...' className={styles.input} value={email} onChange={e => onChange(e)}/>
-      <input type='password' name='senha' placeholder='Coloque sua senha...' className={styles.input} value={senha} onChange={e => onChange(e)}/>
-      <button className={styles.botao}>Cadastrar</button>
-      <Link to='/login' className={styles.login}>Já possui cadastro?</Link>
+        <input type='text' name='nome' placeholder='Coloque seu nome...' className={styles.input} value={nome} onChange={e => onChange(e)}/>
+        <input type='email' name='email' placeholder='Coloque seu email...' className={styles.input} value={email} onChange={e => onChange(e)}/>
+        <input type='password' name='senha' placeholder='Coloque sua senha...' className={styles.input} value={senha} onChange={e => onChange(e)}/>
+        <button className={styles.botao}>Cadastrar</button>
+        <Link to='/login' className={styles.login}>Já possui cadastro?</Link>
       </form>
     </div>
   );

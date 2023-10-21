@@ -55,7 +55,7 @@ router.post('/login', validInfo, async (req, res) => {
 
         //2. checar se usuário não existe (caso não, jogar um erro)
 
-        const usuario = await pool.query('SELECT* FROM usuarios WHERE email_usuario = $1', [email]);
+        const usuario = await pool.query('SELECT * FROM usuarios WHERE email_usuario = $1', [email]);
 
         if (usuario.rows.length === 0) {
             return res.status(404).json('Senha ou Email incorreto');

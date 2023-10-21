@@ -27,7 +27,7 @@ router.post('/registro', authorization, async(req, res) => {
             return res.status(401).send('Estabelecimento já existe');
         }
 
-        const novoEstabelecimento = await pool.query('INSERT INTO estabelecimentos(nome_estabelecimento, endereco_estabelecimento, descricao_estabelecimento) VALUES ($1, $2, $3) RETURNING *', [nome, endereco, descricao]);
+        const novoEstabelecimento = await pool.query('INSERT INTO estabelecimentos(nome_estabelecimento, endereco_estabelecimento, descricao_estabelecimento, id_usuario) VALUES ($1, $2, $3, $4) RETURNING *', [nome, endereco, descricao, req.usuario]);
 
         res.json(novoEstabelecimento.rows);
         
