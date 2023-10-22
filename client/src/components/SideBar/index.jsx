@@ -48,12 +48,12 @@ export default function SideBar({ children, nome, setAuth }) {
         </div>
         <div className={styles.link_container}>
           {menuItem.map((item, index) => (
-            <NavLink to={item.path} key={index} className={styles.link} activeclassName='active'>
+            <NavLink to={item.path} key={index} className={styles.link}>
               <div className={styles.icone}>{item.icon}</div>
               <div style={{ display: selecionado ? 'block' : 'none' }} className={styles.link_texto}>{item.name}</div>
             </NavLink>
           ))}
-          <Link onClick={() => logout()} className={styles.link} activeclassName='active'>
+          <Link onClick={() => logout()} className={styles.link}>
             <div className={styles.icone}><SlLogout/></div>
             <div style={{ display: selecionado ? 'block' : 'none' }} className={styles.link_texto}>Logout</div>
           </Link>

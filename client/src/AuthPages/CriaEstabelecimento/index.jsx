@@ -32,7 +32,7 @@ export default function CriaEstabelecimento() {
       const parseRes = await response.json();
       console.log(parseRes);
 
-      // window.location.href = '/estabelecimentos';
+      window.location.href = '/estabelecimentos';
 
     } catch (err) {
       console.error(err.message);
