@@ -4,7 +4,7 @@ import styles from './Estabelecimentos.module.css';
 import { useEffect, useState } from 'react';
 import img_estabelecimento from './assets/img_estabelecimento.png';
 
-export default function Estabelecimentos() {
+export default function Estabelecimentos({ setEstabelecimentoMode, setId }) {
   const [estabelecimentos, setEstabelecimentos] = useState([]);
 
   async function getEstabelecimentos() {
@@ -27,11 +27,15 @@ export default function Estabelecimentos() {
     getEstabelecimentos();
   }, []);
 
+  const redirecionaParaEstabelecimento = () => {
+    setEstabelecimentoMode(true)
+  }
+
   if (estabelecimentos.length !== 0) {
     return (
       <section className={styles.container_estabelecimentosCadastrados}>
         {estabelecimentos.map(estabelecimento => (
-          <Link key={estabelecimento.id_estabelecimento} to={`/estabelecimento/${estabelecimento.id_estabelecimento}`} className={styles.container_estabelecimento}>
+          <Link key={estabelecimento.id_estabelecimento} to={`/estabelecimento/${estabelecimento.id_estabelecimento}/pedidos`} onClick={() => {redirecionaParaEstabelecimento(estabelecimento.id_estabelecimento); setId(estabelecimento.id_estabelecimento)}} className={styles.container_estabelecimento}>
             <img src={img_estabelecimento} alt='' className={styles.imagem}/>
             <h1 className={styles.nome_estabelecimento}>{estabelecimento.nome_estabelecimento}</h1>
             <div className={styles.linhaDivisoria}></div>
