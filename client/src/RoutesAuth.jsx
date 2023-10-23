@@ -7,6 +7,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "./Context/Auth";
 import { GetNomeContext } from "./Context/Nome";
 import CriaEstabelecimento from "./AuthPages/CriaEstabelecimento";
+import { EstabelecimentoDetalhes } from "./AuthPages/EstabelecimentoDetalhes";
 
 export default function RoutesAuth() {
   const { setAuth, EhAuth } = useContext(AuthContext);
@@ -23,10 +24,11 @@ export default function RoutesAuth() {
   return (
     <SideBar setAuth={setAuth} nome={nome}>
         <Routes>
+            <Route path='/criaestabelecimento' element={<CriaEstabelecimento/>}/>
             <Route path='/estabelecimentos' element={<Estabelecimentos/>}/>
+            <Route path='/estabelecimento/:id' element={<EstabelecimentoDetalhes/>} />
             <Route path='/desempenho' element={<Desempenho/>}/>
             <Route path='/configuracoes' element={<Configuracoes setAuth={setAuth}/>}/>
-            <Route path='/criaestabelecimento' element={<CriaEstabelecimento/>}/>
             <Route path="*" element={<h1>Essa página não existe :(</h1>}/>
         </Routes>
     </SideBar>

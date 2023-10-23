@@ -12,15 +12,16 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={styles.navbar} >
+    <nav className={styles.navbar}>
+      <Link to='/'>
         <img src={logo} className={styles.logo} alt="Logo da Gourmet Express"/>
-        <ul className={styles.containerNavbar}>
-
-        {opcoes.map((opcao) => (
-          <NavBarLink link={opcao} key={opcao.id} estiloLink={styles.link} estiloBarra={styles.barraNavbar}/>
-        ))}
-            <Link className={styles.entrar} to='/login'>Entrar</Link>
-        </ul>
+      </Link>
+      <ul className={styles.containerNavbar}>
+      {opcoes.map((opcao) => (
+        <NavBarLink link={opcao} key={opcao.id} estiloLink={styles.link} estiloBarra={styles.barraNavbar}/>
+      ))}
+      <Link className={styles.entrar} to='/login'>Entrar</Link>
+      </ul>
     </nav>
   );
 }

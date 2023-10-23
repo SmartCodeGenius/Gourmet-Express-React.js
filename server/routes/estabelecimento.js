@@ -16,6 +16,19 @@ router.get('/', authorization, async(req, res) => {
     }
 });
 
+router.get('/:id', authorization, async(req, res) => {
+    try {
+        let query = "SELECT * FROM estabelecimentos WHERE id_estabelecimento = $1";
+        const estabelecimentos = await pool.query(query, [req.params.id]);
+
+        res.json(estabelecimentos.rows[0]);
+        
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json('Erro no servidor');
+    }
+});
+
 router.post('/registro', authorization, async(req, res) => {
     try {
 

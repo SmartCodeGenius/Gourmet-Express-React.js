@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Banner.module.css";
 import logo from './ge_logo.svg'
 
@@ -7,7 +8,7 @@ export default function Banner() {
       <div className={styles.gmContainer}>
         <img src={logo} alt="Logo do Gourmet Express" className={styles.logo} />
         <p>O melhor serviço de comida que utilizará!</p>
-        <button className={styles.botao} onClick={() => alert("Oi mãe!")}>Faça parte!</button>
+        <Link className={styles.botao} to='/cadastro'>Faça parte!</Link>
       </div>
     </section>
   );

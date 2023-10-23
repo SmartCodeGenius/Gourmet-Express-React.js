@@ -31,7 +31,7 @@ export default function Estabelecimentos() {
     return (
       <section className={styles.container_estabelecimentosCadastrados}>
         {estabelecimentos.map(estabelecimento => (
-          <Link key={estabelecimento.id_estabelecimento} className={styles.container_estabelecimento}>
+          <Link key={estabelecimento.id_estabelecimento} to={`/estabelecimento/${estabelecimento.id_estabelecimento}`} className={styles.container_estabelecimento}>
             <img src={img_estabelecimento} alt='' className={styles.imagem}/>
             <h1 className={styles.nome_estabelecimento}>{estabelecimento.nome_estabelecimento}</h1>
             <div className={styles.linhaDivisoria}></div>
