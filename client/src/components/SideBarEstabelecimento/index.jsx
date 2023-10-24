@@ -9,7 +9,7 @@ import styles from './SideBarEstabelecimento.module.css'
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
-export default function SideBar({ children, nome, id }) {
+export default function SideBar({ children, nome, id, dentroDoEstabelecimento }) {
   const [selecionado, setSelecionado] = useState(false);
 
   const alternar = () => setSelecionado(!selecionado);
@@ -58,7 +58,7 @@ export default function SideBar({ children, nome, id }) {
               <div style={{ display: selecionado ? 'block' : 'none' }} className={styles.link_texto}>{item.name}</div>
             </NavLink>
           ))}
-          <Link onClick={() => window.location.href = '/estabelecimentos'} className={styles.link}>
+          <Link onClick={() => {window.location.href = '/estabelecimentos'; dentroDoEstabelecimento = false}} className={styles.link}>
             <div className={styles.icone}><AiOutlineArrowLeft/></div>
             <div style={{ display: selecionado ? 'block' : 'none' }} className={styles.link_texto}>Deixar restaurante</div>
           </Link>

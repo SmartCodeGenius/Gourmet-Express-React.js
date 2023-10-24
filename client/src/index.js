@@ -5,6 +5,7 @@ import AppRoutes from './Routes';
 import { AuthProvider } from './Context/Auth';
 import { GetNomeProvider } from './Context/Nome';
 import { JWTProvider } from './Context/JWT';
+import { EstabelecimentoProvider } from './Context/EstabelecimentoMode';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <AuthProvider>
       <JWTProvider>
         <GetNomeProvider>
-          <AppRoutes />
+          <EstabelecimentoProvider>
+            <AppRoutes />
+          </EstabelecimentoProvider>
         </GetNomeProvider>
       </JWTProvider>
     </AuthProvider>

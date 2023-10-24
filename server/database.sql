@@ -43,7 +43,9 @@ CREATE TABLE produtos(
     nome_produto VARCHAR(100) NOT NULL,
     preco_produto FLOAT NOT NULL,
     descricao_produto VARCHAR(255) NOT NULL,
-    ingredientes_produto VARCHAR(255) NOT NULL
+    ingredientes_produto VARCHAR(255) NOT NULL,
+    id_estabelecimento INTEGER NOT NULL,
+    FOREIGN KEY(id_estabelecimento) REFERENCES estabelecimentos(id_estabelecimento)
 );
 
 -- CREATE TABLE pedidos(
