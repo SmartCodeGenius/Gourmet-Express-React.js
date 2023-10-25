@@ -6,29 +6,45 @@ import styles from './Estoque.module.css';
 
 export default function Estoque() {
   const [produtos, setProdutos] = useState([]);
+  const [idProduto, setIdProduto] = useState([]);
   const { id } = useContext(EstabelecimentoContext);
-  
+
+  const deleteProduto = async(id) => {
+    try {
+      const response = await fetch('http://localhost:5000/produtos', {
+        method: 'DELETE',
+        headers: { 'Estabelecimento-ID': id }
+      });
+
+      const parseRes = await response.json();
+      console.log(parseRes);
+      setProdutos(parseRes);
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+
   useEffect(() => {
     async function getProdutos() {
       try {
         const response = await fetch('http://localhost:5000/produtos', {
           method: 'GET',
           headers: { token: localStorage.token, 'Estabelecimento-ID': id }
-        })
-  
+        });
+
         const parseRes = await response.json();
         console.log(parseRes);
         setProdutos(parseRes);
-  
+
       } catch (err) {
         console.error(err.message);
       }
     }
     getProdutos();
   }, [id]);
-  
-  if(produtos.length !== 0) {
-    return(
+
+  if (produtos.length !== 0) {
+    return (
       <section className={styles.background}>
         {produtos.map(produto => (
           <div key={produto.id_produto} className={styles.objProduto}>
@@ -37,13 +53,16 @@ export default function Estoque() {
               <h3>R$ {produto.preco_produto}</h3>
             </div>
             <div>
-              <Link>Editar</Link>
-              <Link>Excluir</Link>
+              <Link style={{ color: '#FFF', backgroundColor: '#F39A13' }} className={styles.opcao}>Editar</Link>
+              <button onClick={() => deleteProduto(produto.id_produto)} style={{ color: '#FFF', backgroundColor: '#7C0B0B' }} className={styles.opcao}>Excluir</button>
             </div>
           </div>
         ))}
+        <div className={styles.background}>
+          <Link className={styles.botaoCriarProduto} to={`/estabelecimento/${id}/criaProduto`}>Cadastrar Produto</Link>
+        </div>
       </section>
-    )    
+    )
   }
 
   return (

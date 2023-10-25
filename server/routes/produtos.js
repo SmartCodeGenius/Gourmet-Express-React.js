@@ -37,4 +37,18 @@ router.post('/criaProduto', authorization, async(req, res) => {
     }
 });
 
+router.delete('/', authorization, async(req, res) => {
+    try {
+        const produtoId = req.headers['estabelecimento-id'];
+        let query = "DELETE * FROM produtos WHERE id_produto = $1";
+        const estabelecimentos = await pool.query(query, [produtoId]);
+
+        res.json(estabelecimentos.rows[0]);
+        
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json('Erro no servidor');
+    }
+});
+
 module.exports = router;

@@ -43,15 +43,16 @@ CREATE TABLE produtos(
     nome_produto VARCHAR(100) NOT NULL,
     preco_produto FLOAT NOT NULL,
     ingredientes_produto VARCHAR(255) NOT NULL,
+    quantia INTEGER,
     id_estabelecimento INTEGER NOT NULL,
     FOREIGN KEY(id_estabelecimento) REFERENCES estabelecimentos(id_estabelecimento)
 );
 
--- CREATE TABLE pedidos(
-    -- id_pedido SERIAL PRIMARY KEY,
-    -- id_cliente INTEGER,
-    -- id_produto INTEGER,
-    -- data_pedido TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- adicionando um campo de data e hora para o pedido
-    -- FOREIGN KEY(id_cliente) REFERENCES clientes(id),
-    -- FOREIGN KEY(id_produto) REFERENCES produtos(id)
--- );
+CREATE TABLE pedidos(
+    id_pedido SERIAL PRIMARY KEY,
+    id_produto INTEGER,
+    adicional VARCHAR(200),
+    quantia INTEGER,
+    data_pedido TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- adicionando um campo de data e hora para o pedido
+    FOREIGN KEY(id_produto) REFERENCES produtos(id_produto)
+);

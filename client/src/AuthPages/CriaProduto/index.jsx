@@ -33,7 +33,7 @@ export default function CriaProduto() {
       const parseRes = await response.json();
       console.log(parseRes);
   
-      window.location.href = `/estabelecimento/${id}/estoque`;
+      window.history.back();
     } catch (err) {
       console.error(err.message);
     }
