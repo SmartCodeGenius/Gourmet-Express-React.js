@@ -15,7 +15,6 @@ export default function Estabelecimentos({ setEstabelecimentoMode, setId }) {
       });
 
       const parseRes = await response.json();
-      console.log(parseRes);
       setEstabelecimentos(parseRes);
 
     } catch (err) {

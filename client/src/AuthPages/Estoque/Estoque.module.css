@@ -1,0 +1,25 @@
+.background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botaoCriarProduto {
+    color: #FFF;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #7C0B0B;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.objProduto {
+    background-color: #E2E2E2;
+    display: flex;
+    justify-content: space-between;
+    gap: 50em;
+    padding: 1em;
+    border-radius: 1em;
+}

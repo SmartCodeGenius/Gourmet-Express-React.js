@@ -4,12 +4,10 @@ const authorization = require('../middleware/authorization');
 
 router.get('/', authorization, async(req, res) => {
     try {
-
         let query = "SELECT * FROM estabelecimentos WHERE id_usuario = $1";
         const estabelecimentos = await pool.query(query, [req.usuario]);
 
         res.json(estabelecimentos.rows);
-        
     } catch (err) {
         console.error(err.message);
         res.status(500).json('Erro no servidor');
