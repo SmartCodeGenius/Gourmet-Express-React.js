@@ -1,5 +1,7 @@
+import PagEmDesenvolvimento from "../../pages/PagEmDesenvolvimento";
+
 export default function Desempenho() {
   return (
-    <h1>Desempenho</h1>
+    <PagEmDesenvolvimento/>
   )
 }

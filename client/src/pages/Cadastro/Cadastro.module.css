@@ -24,6 +24,22 @@
     border-radius: 10px;
 }
 
+.senhaContainer {
+    display: flex;
+    margin: 0;
+}
+
+.visibilidadeBotaoSenha {
+    margin-left: -12em;
+    border: none;
+    font-size: 15px;
+    background-color: #7E1701;
+    color: #FFF;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 1.5em;
+}
+
 .botao {
     padding: 10px;
     font-size: 2em;

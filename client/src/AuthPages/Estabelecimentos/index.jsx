@@ -41,7 +41,7 @@ export default function Estabelecimentos({ setEstabelecimentoMode, setId }) {
             <p className={styles.descricao_estabelecimento}>{estabelecimento.descricao_estabelecimento}</p>
           </Link>
         ))}
-        {!estabelecimentos.length === 3 ? 
+        {!estabelecimentos.length <= 3 ? 
         <Link to='/criaestabelecimento' style={{ maxWidth: '200px', textAlign: 'center', color: '#000' }}>
           <RiAddCircleFill className={styles.botao} style={{ fontSize: '30px' }}/>
           <h2 style={{ fontSize: '20px' }}>Adicionar outro estabelecimento</h2>

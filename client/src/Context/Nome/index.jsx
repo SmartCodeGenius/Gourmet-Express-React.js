@@ -13,7 +13,6 @@ export const GetNomeProvider = ({ children }) => {
         });
   
         const parseRes = await response.json();
-        // console.log(parseRes);
   
         setNome(parseRes.nome_usuario);
   
