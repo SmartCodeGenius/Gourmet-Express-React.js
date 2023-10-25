@@ -20,7 +20,7 @@ export default function Navbar() {
       {opcoes.map((opcao) => (
         <NavBarLink link={opcao} key={opcao.id} estiloLink={styles.link} estiloBarra={styles.barraNavbar}/>
       ))}
-      <Link className={styles.entrar} to='/login'>Entrar</Link>
+      <Link className={styles.entrar} to='/cadastro'>Entrar</Link>
       </ul>
     </nav>
   );

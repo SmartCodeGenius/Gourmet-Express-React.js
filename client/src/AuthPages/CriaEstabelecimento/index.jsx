@@ -16,8 +16,17 @@ export default function CriaEstabelecimento() {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   }
 
+  const inputVazio = (valor) => {
+    return /^\s*$/.test(valor);
+  };
+
   const onSubmitForm = async (e) => {
     e.preventDefault();
+
+    if (inputVazio(nome) || inputVazio(endereco) || inputVazio(descricao)) {
+      alert('Um ou mais campos estão vazios.');
+      return;
+    }
 
     try {
 
@@ -47,10 +56,10 @@ export default function CriaEstabelecimento() {
         <input type='text' className={styles.input} name={'nome'} value={nome} onChange={e => onChange(e)} />
 
         <label>Endereço<strong style={{ color: 'red' }}>*</strong></label>
-        <input type='text' className={styles.input} name={'endereco'} value={endereco} onChange={e => onChange(e)} />
+        <input type='text' className={styles.input} placeholder='Rua/Avenida...' name={'endereco'} value={endereco} onChange={e => onChange(e)} />
 
         <label>Descrição<strong style={{ color: 'red' }}>*</strong></label>
-        <input type='text' className={styles.input} style={{ padding: '50px 10px', fontSize: 15 }} placeholder='Descreva seu restaurante de forma breve...' name={'descricao'} value={descricao} onChange={e => onChange(e)} />
+        <input type='text' className={styles.input} style={{ padding: '50px 10px', fontSize: 15 }} placeholder='Coloque sobre seu lugar para todos verem!' name={'descricao'} value={descricao} onChange={e => onChange(e)} />
 
         <div className={styles.opcoes}>
           <Link to='/estabelecimentos' className={styles.opcao} style={{ backgroundColor: '#FFF', color: '#000' }}>Cancelar</Link>

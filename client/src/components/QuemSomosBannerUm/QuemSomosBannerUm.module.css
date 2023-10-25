@@ -11,8 +11,17 @@
     background-color: #7C0B0B;
     display: flex;
     flex-direction: column;
-    width: 50em;
-    margin-left: 15em;
+    width: 80.96em;
     color: #FFF;
     opacity: 85%;
+    padding: 1em 0;
+}
+
+.titulo {
+    font-size: 2.5em;
+}
+
+.texto {
+    margin-top: 10px;
+    font-size: 1.2em;
 }

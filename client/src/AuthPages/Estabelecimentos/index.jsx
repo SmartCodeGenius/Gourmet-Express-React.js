@@ -34,17 +34,19 @@ export default function Estabelecimentos({ setEstabelecimentoMode, setId }) {
     return (
       <section className={styles.container_estabelecimentosCadastrados}>
         {estabelecimentos.map(estabelecimento => (
-          <Link key={estabelecimento.id_estabelecimento} to={`/estabelecimento/${estabelecimento.id_estabelecimento}/pedidos`} onClick={() => {redirecionaParaEstabelecimento(estabelecimento.id_estabelecimento); setId(estabelecimento.id_estabelecimento)}} className={styles.container_estabelecimento}>
+          <Link key={estabelecimento.id_estabelecimento} to={`/estabelecimento/${estabelecimento.id_estabelecimento}/pedidos`} onClick={() => {redirecionaParaEstabelecimento(); setId(estabelecimento.id_estabelecimento)}} className={styles.container_estabelecimento}>
             <img src={img_estabelecimento} alt='' className={styles.imagem}/>
             <h1 className={styles.nome_estabelecimento}>{estabelecimento.nome_estabelecimento}</h1>
             <div className={styles.linhaDivisoria}></div>
             <p className={styles.descricao_estabelecimento}>{estabelecimento.descricao_estabelecimento}</p>
           </Link>
         ))}
+        {!estabelecimentos.length === 3 ? 
         <Link to='/criaestabelecimento' style={{ maxWidth: '200px', textAlign: 'center', color: '#000' }}>
           <RiAddCircleFill className={styles.botao} style={{ fontSize: '30px' }}/>
           <h2 style={{ fontSize: '20px' }}>Adicionar outro estabelecimento</h2>
         </Link>
+        : ''}
       </section>
     );
   }
