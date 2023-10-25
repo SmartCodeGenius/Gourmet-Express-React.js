@@ -1,0 +1,25 @@
+.caixa {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 70em;
+    background-color: #CE8080;
+    border-radius: 1em;
+    align-items: center;
+}
+
+.id {
+    font-size: 3em;
+}
+
+.descricao {
+    font-size: 15px;
+}
+
+.botao {
+    color: #FFF;
+    background-color: #7C0B0B;
+    border-radius: 1em;
+    padding: 1em;
+    font-size: 1em;
+}

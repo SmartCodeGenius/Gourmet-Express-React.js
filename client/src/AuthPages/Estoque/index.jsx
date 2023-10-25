@@ -13,7 +13,7 @@ export default function Estoque() {
     try {
       const response = await fetch('http://localhost:5000/produtos', {
         method: 'DELETE',
-        headers: { 'Estabelecimento-ID': id }
+        headers: { 'Estabelecimento-ID': idProduto }
       });
 
       const parseRes = await response.json();
@@ -53,7 +53,7 @@ export default function Estoque() {
               <h3>R$ {produto.preco_produto}</h3>
             </div>
             <div>
-              <Link style={{ color: '#FFF', backgroundColor: '#F39A13' }} className={styles.opcao}>Editar</Link>
+              <Link onClick={() => alert('Ainda em desenvolvimento :)')} style={{ color: '#FFF', backgroundColor: '#F39A13' }} className={styles.opcao}>Editar</Link>
               <button onClick={() => deleteProduto(produto.id_produto)} style={{ color: '#FFF', backgroundColor: '#7C0B0B' }} className={styles.opcao}>Excluir</button>
             </div>
           </div>
