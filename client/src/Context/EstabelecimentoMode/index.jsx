@@ -3,11 +3,11 @@ import { createContext, useState } from "react";
 export const EstabelecimentoContext = createContext();
 
 export const EstabelecimentoProvider = ({ children }) => {
-    const [id, setId] = useState('');
+    const [id_estabelecimento, setId_estabelecimento] = useState('');
     const [estabelecimentoMode, setEstabelecimentoMode] = useState(false);
 
     const idDefinido = (boolean) => {
-        setId(boolean);
+        setId_estabelecimento(boolean);
     }
 
     const dentroDoEstabelecimento = (boolean) => {
@@ -15,7 +15,7 @@ export const EstabelecimentoProvider = ({ children }) => {
     }
 
     return (
-        <EstabelecimentoContext.Provider value={{ estabelecimentoMode, dentroDoEstabelecimento, id, idDefinido }}>
+        <EstabelecimentoContext.Provider value={{ estabelecimentoMode, dentroDoEstabelecimento, id_estabelecimento, idDefinido }}>
             { children }
         </EstabelecimentoContext.Provider>
     )
